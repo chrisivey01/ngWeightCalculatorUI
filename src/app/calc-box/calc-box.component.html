@@ -1,10 +1,39 @@
 <md-card class="contentCard">
-  <p>
-    calc-box works!
+  <div class=title>
+    <label id="myTitle">Chris's Barbell Repository</label>
+  </div>
 
-    <i class="material-icons" md-48>add</i>
-    <i class="material-icons" md-36>edit</i>
-  </p>
+  <div class="weightOnBarbellBox">
+    <label for="lbPlates45" class="lbPlates">45lb Plates: </label>
+    <label id="lbPlates45">0</label>
+    <br/>
+
+    <label for="lbPlates25" class="lbPlates">25lb Plates: </label>
+    <label id="lbPlates25">0</label>
+    <br/>
+
+    <label for="lbPlates10" class="lbPlates">10lb Plates: </label>
+    <label id="lbPlates10">0</label>
+    <br/>
+
+    <label for="lbPlates5" class="lbPlates">5lb Plates: </label>
+    <label id="lbPlates5">0</label>
+    <br/>
+
+    <label for="lbPlates2point5" class="lbPlates">2.5lb Plates: </label>
+    <label id="lbPlates2point5">0</label>
+    <br/>
+
+    <label for="targetWeightText" id="targetWeightLabel">Target Weight: </label>
+    <input type="text" id="targetWeightText"/>
+    <input type="button" id="calculateTargetWeightButton" value="Calculate"/>
+
+
+    <div id=barbell></div>
+    <br/>
+
+    <div id="words"></div>
+  </div>
 </md-card>
 
 

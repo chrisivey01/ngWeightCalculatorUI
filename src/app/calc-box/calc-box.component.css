@@ -12,3 +12,12 @@
   width:300px;
   left: -5px;
 }
+
+#svgresult{
+  position: relative;
+  left: 275px;
+}
+#thebar{
+  fill:gray;
+}
+

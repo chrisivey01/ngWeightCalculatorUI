@@ -1,0 +1,9 @@
+#titleBox{
+  position: relative;
+  text-align:center;
+  font-weight: bold;
+  font-size: 35px;
+  width:300px;
+  left: 40%;
+  top:40px;
+}

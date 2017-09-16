@@ -1,0 +1,9 @@
+form{
+  display: inline-grid;
+}
+
+.loginCard{
+  margin:20px;
+  width:150px;
+  height:75px;
+}

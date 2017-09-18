@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import $ from 'jquery';
+
+(<any>window).jQuery = $
 
 @Component({
   selector: 'app-calc-box',
@@ -11,6 +14,10 @@ export class CalcBoxComponent implements OnInit {
   }
 
   ngOnInit() {
+    $(function(){
+      alert('Hello');
+    });
+
   }
 
 }

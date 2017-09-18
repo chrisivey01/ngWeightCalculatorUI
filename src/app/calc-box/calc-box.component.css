@@ -21,3 +21,13 @@
   fill:gray;
 }
 
+.plate{
+  fill:black;
+}
+
+.plateLabel{
+  fill: white;
+  font-weight:bold;
+  font-size:20px;
+  text-anchor: middle;
+}

@@ -10,30 +10,7 @@ export class CalcBoxService {
   constructor(private http: Http) {
   }
 
-  getWeightCalc(body: string): Observable<string> {
-    console.log("in calc box service");
-
-    let searchParams = new URLSearchParams();
-    searchParams.set("weight", body);
-    let headers = new Headers({'Content-Type': 'application/json', params: searchParams});
-    let options = new RequestOptions({headers: headers});
-
-    let serverResponse = this.http.post(this.calcBoxUrl, options);
-
-    console.log(serverResponse);
-
-    return serverResponse
-      .map((res: Response) => res.json())
-      .catch((error: any) => Observable.throw(error || 'Server error'));
+  getWeightCalc(body: string): Observable<Response> {
+    return this.http.post(this.calcBoxUrl, body);
   }
 }
-
-
-// articleUrl = "http://localhost:8080/user/article";
-// createArticle(article: Article):Observable<number> {
-//   let cpHeaders = new Headers({ 'Content-Type': 'application/json' });
-// let options = new RequestOptions({ headers: cpHeaders });
-// return this.http.post(this.articleUrl, article, options)
-//   .map(success => success.status)
-//   .catch(this.handleError);
-// }

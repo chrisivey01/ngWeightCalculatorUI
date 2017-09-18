@@ -1,5 +1,53 @@
-<md-card class="contentCard">
-  <svg id="svgresult" width="550">
-    <rect id="thebar" width="450" height="10" x="50" y="70"></rect>
-  </svg>
+<md-card class="contentCard" style="display:flex">
+  45's: {{fortyFives}}
+  <br />
+
+  25's: {{twentyFives}}
+  <br />
+
+  10's: {{tens}}
+  <br />
+
+  5's: {{fives}}
+  <br />
+
+  2.5's: {{twoPointFives}}
+  <br />
+
+  <table style="border: none;height:100px">
+    <tr style="height:100px">
+      <td>
+        <div  *ngIf="blanks > 0" [ngStyle]="{'backgroundColor': '#000', 'height' : '10%', 'width' : blanks / 2 * 20 + 'px'}"></div>
+      </td>
+      <td *ngFor="let weight of leftWeights" style="color: #FFF">
+        <div [ngStyle]="{'backgroundColor':'#000', 'textAlign':'center', 'width': '25px', 'height': weight / standardHeight + 20 + '%'}">
+          {{weight}}
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <table style="border: none;height:100px;width:300px">
+    <tr>
+      <td>
+        <div style="background-color:#000;height:10%"></div>
+      </td>
+    </tr>
+  </table>
+
+  <table style="border: none;height:100px">
+    <tr>
+      <td *ngFor="let weight of rightWeights" style="color: #FFF">
+        <div [ngStyle]="{'backgroundColor':'#000', 'textAlign':'center', 'width': '25px', 'height': weight / standardHeight + 20 + '%'}">
+          {{weight}}
+        </div>
+      </td>
+      <td>
+        <div  *ngIf="blanks > 0" [ngStyle]="{'backgroundColor': '#000', 'height' : '10%', 'width' : blanks / 2 * 20 + 'px'}"></div>
+      </td>
+    </tr>
+  </table>
+  <br />
+
+  <h2>Total Weight: {{totalWeight}}</h2>
 </md-card>

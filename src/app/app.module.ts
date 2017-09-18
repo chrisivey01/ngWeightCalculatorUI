@@ -13,6 +13,7 @@ import {Routes, RouterModule} from "@angular/router";
 import {LoginComponent} from './login/login.component';
 
 import {CalcBoxService} from './calc-box/calc-box.service';
+import {TestService} from './test/test.service'
 import {TestComponent} from './test/test.component'
 
 const appRoutes: Routes = [
@@ -44,7 +45,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     HttpModule
   ],
-  providers: [CalcBoxService],
+  providers: [CalcBoxService, TestService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

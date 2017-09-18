@@ -27,12 +27,13 @@ export class CalcBoxComponent implements OnInit {
   getWeightCalc() {
     console.log("in calc box component");
 
-    this.service.getWeightCalc(this.calcForm.controls.targetWeightText.value).subscribe(
-      weights => {
-        console.log(weights)
-      },
-      err => {
-        console.log(err);
-      });
+    this.service.getWeightCalc(this.calcForm.controls.targetWeightText.value)
+      .subscribe(
+        weights => {
+          console.log(weights)
+        },
+        err => {
+          console.log(err);
+        });
   }
 }

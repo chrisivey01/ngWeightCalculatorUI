@@ -1,14 +1,6 @@
 .contentCard{
   margin:20px;
-  width:750px;
+  width:1000px;
   height:350px;
   left:150px;
-}
-
-#svgresult{
-  /*position: relative;*/
-  /*left: 275px;*/
-}
-#thebar{
-  fill:gray;
 }

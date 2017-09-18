@@ -1,6 +1,16 @@
-.contentCard{
-  margin:20px;
-  width:1000px;
-  height:350px;
-  left:150px;
+.contentCard {
+  margin: 20px;
+  width: 1000px;
+  height: 350px;
+  left: 150px;
+}
+
+td > div {
+  background-color: black;
+  text-align: center;
+}
+
+table {
+  border: none;
+  height: 100px;
 }

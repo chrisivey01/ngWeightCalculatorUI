@@ -12,6 +12,8 @@ import {HttpModule} from '@angular/http';
 import {Routes, RouterModule} from "@angular/router";
 import {LoginComponent} from './login/login.component';
 
+import {CalcBoxService} from './calc-box/calc-box.service'
+
 const appRoutes: Routes = [
   {path: 'login-route', component: LoginComponent},
   {path: 'calc-box-route', component: CalcBoxComponent}
@@ -27,8 +29,9 @@ const appRoutes: Routes = [
   ],
   imports: [
     RouterModule.forRoot(
-      appRoutes,
-      {enableTracing: true} // <-- debugging purposes only
+      appRoutes
+      // ,
+      // {enableTracing: true} // <-- debugging purposes only
     ),
     BrowserModule,
     BrowserAnimationsModule,
@@ -38,7 +41,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [CalcBoxService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

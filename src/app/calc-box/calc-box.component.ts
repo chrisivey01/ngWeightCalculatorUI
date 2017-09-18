@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import $ from 'jquery';
-
-(<any>window).jQuery = $
+import {CalcBoxService} from './calc-box.service';
+import {Validators, FormBuilder} from "@angular/forms";
 
 @Component({
   selector: 'app-calc-box',
@@ -10,8 +10,12 @@ import $ from 'jquery';
 })
 export class CalcBoxComponent implements OnInit {
 
-  constructor() {
+  constructor(public fb: FormBuilder, public service: CalcBoxService) {
   }
+
+  public calcForm = this.fb.group({
+    targetWeightText: ["", Validators.required]
+  });
 
   ngOnInit() {
     $(function(){
@@ -20,4 +24,15 @@ export class CalcBoxComponent implements OnInit {
 
   }
 
+  getWeightCalc() {
+    console.log("in calc box component");
+
+    this.service.getWeightCalc(this.calcForm.controls.targetWeightText.value).subscribe(
+      weights => {
+        console.log(weights)
+      },
+      err => {
+        console.log(err);
+      });
+  }
 }

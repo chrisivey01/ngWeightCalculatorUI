@@ -20,11 +20,11 @@
     <label for="lbPlates2point5" class="lbPlates">2.5lb Plates: </label>
     <label id="lbPlates2point5">0</label>
     <br/>
-    <br/>
-    <label for="targetWeightText" id="targetWeightLabel">Target Weight: </label>
-    <input type="text" id="targetWeightText"/>
-    <input type="button" id="calculateTargetWeightButton" value="Calculate"/>
 
+    <form [formGroup]="calcForm" (ngSubmit)="getWeightCalc($event)">
+      <input formControlName="targetWeightText" type="email" placeholder="Target Weight">
+      <button>Calculate</button>
+    </form>
 
     <svg id ="svgresult" width="550" height="250">
       <rect id="thebar" width="600" height="10" x="100" y="50"></rect>
@@ -35,15 +35,4 @@
     <div id="words"></div>
   </div>
 </md-card>
-
-
-<!--<form class="example-form">-->
-<!--<md-form-field class="example-full-width">-->
-<!--<input mdInput [food]="currentFood" placeholder="Favorite food" value="Sushi">-->
-<!--</md-form-field>-->
-<!--<br />-->
-<!--<button (click)="inputClicked($event)"><i class="material-icons" md-36>input</i>Calculate</button>-->
-<!--</form>-->
-
-
 

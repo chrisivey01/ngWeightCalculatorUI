@@ -12,11 +12,13 @@ import {HttpModule} from '@angular/http';
 import {Routes, RouterModule} from "@angular/router";
 import {LoginComponent} from './login/login.component';
 
-import {CalcBoxService} from './calc-box/calc-box.service'
+import {CalcBoxService} from './calc-box/calc-box.service';
+import {TestComponent} from './test/test.component'
 
 const appRoutes: Routes = [
   {path: 'login-route', component: LoginComponent},
-  {path: 'calc-box-route', component: CalcBoxComponent}
+  {path: 'calc-box-route', component: CalcBoxComponent},
+  {path: 'test-route', component: TestComponent}
 ];
 
 @NgModule({
@@ -25,7 +27,8 @@ const appRoutes: Routes = [
     CalcBoxComponent,
     TitleBarComponent,
     SideBarComponent,
-    LoginComponent
+    LoginComponent,
+    TestComponent
   ],
   imports: [
     RouterModule.forRoot(

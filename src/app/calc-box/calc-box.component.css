@@ -1,21 +1,28 @@
 .contentCard{
   margin:20px;
   width:250px;
+  height:50px;
+  left:150px;
+}
+
+.infoCard{
+  margin:20px;
   height:150px;
+  width:700px;
   left:150px;
 }
 
 .weightOnBarbellBox{
-  position: relative;
+  /*position: relative;*/
   font-weight: bold;
   font-size: 15px;
   width:300px;
-  left: -5px;
+  /*left: -5px;*/
 }
 
 #svgresult{
-  position: relative;
-  left: 275px;
+  /*position: relative;*/
+  /*left: 275px;*/
 }
 #thebar{
   fill:gray;

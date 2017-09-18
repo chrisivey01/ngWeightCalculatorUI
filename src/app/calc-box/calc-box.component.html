@@ -1,38 +1,42 @@
 <md-card class="contentCard">
-
-  <div class="weightOnBarbellBox">
-    <label for="lbPlates45" class="lbPlates">45lb Plates: </label>
-    <label id="lbPlates45">0</label>
-    <br/>
-
-    <label for="lbPlates25" class="lbPlates">25lb Plates: </label>
-    <label id="lbPlates25">0</label>
-    <br/>
-
-    <label for="lbPlates10" class="lbPlates">10lb Plates: </label>
-    <label id="lbPlates10">0</label>
-    <br/>
-
-    <label for="lbPlates5" class="lbPlates">5lb Plates: </label>
-    <label id="lbPlates5">0</label>
-    <br/>
-
-    <label for="lbPlates2point5" class="lbPlates">2.5lb Plates: </label>
-    <label id="lbPlates2point5">0</label>
-    <br/>
-
-    <form [formGroup]="calcForm" (ngSubmit)="getWeightCalc($event)">
-      <input formControlName="targetWeightText" type="email" placeholder="Target Weight">
-      <button>Calculate</button>
-    </form>
-
-    <svg id ="svgresult" width="550" height="250">
-      <rect id="thebar" width="600" height="10" x="100" y="50"></rect>
-
-    </svg>
-
-
-    <div id="words"></div>
-  </div>
+  <form [formGroup]="calcForm" (ngSubmit)="getWeightCalc($event)">
+    <input formControlName="targetWeightText" type="email" placeholder="Target Weight">
+    <button>Calculate</button>
+  </form>
 </md-card>
 
+<md-card class="infoCard">
+  <md-grid-list cols="2" rowHeight="200px" style="display:flex">
+
+    <md-grid-tile>
+      <div style="width=200px">
+        <label for="lbPlates45">45lb Plates: </label>
+        <label id="lbPlates45">0</label>
+        <br/>
+
+        <label for="lbPlates25">25lb Plates: </label>
+        <label id="lbPlates25">0</label>
+        <br/>
+
+        <label for="lbPlates10">10lb Plates: </label>
+        <label id="lbPlates10">0</label>
+        <br/>
+
+        <label for="lbPlates5">5lb Plates: </label>
+        <label id="lbPlates5">0</label>
+        <br/>
+
+        <label for="lbPlates2point5">2.5lb Plates: </label>
+        <label id="lbPlates2point5">0</label>
+        <br/>
+      </div>
+    </md-grid-tile>
+    <md-grid-tile>
+      <div>
+        <svg id="svgresult" width="550">
+          <rect id="thebar" width="450" height="10" x="50" y="70"></rect>
+        </svg>
+      </div>
+    </md-grid-tile>
+  </md-grid-list>
+</md-card>

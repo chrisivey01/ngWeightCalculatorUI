@@ -18,9 +18,9 @@ export class CalcBoxComponent implements OnInit {
   });
 
   ngOnInit() {
-    $(function(){
-      alert('Hello');
-    });
+    // $(function(){
+    //   alert('Hello');
+    // });
 
   }
 

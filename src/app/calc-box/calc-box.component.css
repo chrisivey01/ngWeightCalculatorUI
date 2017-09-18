@@ -2,4 +2,22 @@
   margin:20px;
   width:250px;
   height:150px;
+  left:150px;
 }
+
+.weightOnBarbellBox{
+  position: relative;
+  font-weight: bold;
+  font-size: 15px;
+  width:300px;
+  left: -5px;
+}
+
+#svgresult{
+  position: relative;
+  left: 275px;
+}
+#thebar{
+  fill:gray;
+}
+

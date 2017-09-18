@@ -1,7 +1,4 @@
 <md-card class="contentCard">
-  <div class=title>
-    <label id="myTitle">Chris's Barbell Repository</label>
-  </div>
 
   <div class="weightOnBarbellBox">
     <label for="lbPlates45" class="lbPlates">45lb Plates: </label>
@@ -23,14 +20,17 @@
     <label for="lbPlates2point5" class="lbPlates">2.5lb Plates: </label>
     <label id="lbPlates2point5">0</label>
     <br/>
-
+    <br/>
     <label for="targetWeightText" id="targetWeightLabel">Target Weight: </label>
     <input type="text" id="targetWeightText"/>
     <input type="button" id="calculateTargetWeightButton" value="Calculate"/>
 
 
-    <div id=barbell></div>
-    <br/>
+    <svg id ="svgresult" width="550" height="250">
+      <rect id="thebar" width="600" height="10" x="100" y="50"></rect>
+
+    </svg>
+
 
     <div id="words"></div>
   </div>

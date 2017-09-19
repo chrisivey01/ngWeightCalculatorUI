@@ -3,36 +3,65 @@
     <input formControlName="targetWeightText" type="email" placeholder="Target Weight">
     <button>Calculate</button>
   </form>
+  <br/>
+
+  Select your plates:
+  <md-checkbox [(ngModel)]="hundredPlate">100</md-checkbox>
+  <md-checkbox [(ngModel)]="fiftyFivePlate">55</md-checkbox>
+  <md-checkbox [(ngModel)]="fortyFivePlate">45</md-checkbox>
+  <md-checkbox [(ngModel)]="thirtyFivePlate">35</md-checkbox>
+  <md-checkbox [(ngModel)]="twentyFivePlate">25</md-checkbox>
+  <md-checkbox [(ngModel)]="tenPlate">10</md-checkbox>
+  <md-checkbox [(ngModel)]="fivePlate">5</md-checkbox>
+  <md-checkbox [(ngModel)]="twoPointFivePlate">2.5</md-checkbox>
+  <md-checkbox [(ngModel)]="onePointTwoFivePlate">1.25</md-checkbox>
 </md-card>
 
 <md-card class="contentCard">
-  <table class="plateCount">
-    <tr>
-      <td>45lb Plates: </td>
-      <td>{{fortyFives}}</td>
-    </tr>
-    <tr>
-      <td>25lb Plates: </td>
-      <td>{{twentyFives}}</td>
-    </tr>
-    <tr>
-      <td>10lb Plates: </td>
-      <td>{{tens}}</td>
-    </tr>
-    <tr>
-      <td>5lb Plates: </td>
-      <td>{{fives}}</td>
-    </tr>
-    <tr>
-      <td>2.5lb Plates: </td>
-      <td>{{twoPointFives}}</td>
-    </tr>
-  </table>
-  <a>
-    <h2>Total Weight: {{totalWeight}}</h2>
-  </a>
-  <br/>
-
+  <div>
+    <table class="plateCount">
+      <tr>
+        <td>100lb Plates:</td>
+        <td>{{hundreds}}</td>
+      </tr>
+      <tr>
+        <td>55lb Plates:</td>
+        <td>{{fiftyFives}}</td>
+      </tr>
+      <tr>
+        <td>45lb Plates:</td>
+        <td>{{fortyFives}}</td>
+      </tr>
+      <tr>
+        <td>35lb Plates:</td>
+        <td>{{thirtyFives}}</td>
+      </tr>
+      <tr>
+        <td>25lb Plates:</td>
+        <td>{{twentyFives}}</td>
+      </tr>
+      <tr>
+        <td>10lb Plates:</td>
+        <td>{{tens}}</td>
+      </tr>
+      <tr>
+        <td>5lb Plates:</td>
+        <td>{{fives}}</td>
+      </tr>
+      <tr>
+        <td>2.5lb Plates:</td>
+        <td>{{twoPointFives}}</td>
+      </tr>
+      <tr>
+        <td>1.25lb Plates:</td>
+        <td>{{onePointTwoFives}}</td>
+      </tr>
+    </table>
+    <a>
+      <h2>Total Weight: {{totalWeight}}</h2>
+    </a>
+    <br/>
+  </div>
   <div *ngIf="blanks < 20" class="barbellDiv">
     <table>
       <tr style="height:100px">
@@ -56,7 +85,7 @@
     </table>
 
     <table>
-      <tr>
+      <tr style="height:100px">
         <td *ngFor="let weight of rightWeights" style="color: #FFF">
           <div class="weights" [ngStyle]="{'height': weight / standardHeight + 20 + '%', 'width': '25px'}">
             {{weight}}

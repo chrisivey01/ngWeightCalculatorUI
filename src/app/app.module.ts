@@ -7,7 +7,7 @@ import {TitleBarComponent} from './title-bar/title-bar.component';
 import {SideBarComponent} from './side-bar/side-bar.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MdButtonModule, MdCardModule, MdCheckboxModule} from '@angular/material';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {Routes, RouterModule} from "@angular/router";
 import {LoginComponent} from './login/login.component';
@@ -39,6 +39,7 @@ const appRoutes: Routes = [
     ),
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     MdButtonModule,
     MdCardModule,
     MdCheckboxModule,

@@ -8,7 +8,7 @@
 .contentCard {
   margin: 20px;
   width: 83%;
-  height: 45%;
+  height: 65%;
   left: 150px;
   display: block;
 }
@@ -29,6 +29,7 @@ table {
 
 .barbellDiv {
   display: flex;
+  height: 200px;
 }
 
 .plateCount {

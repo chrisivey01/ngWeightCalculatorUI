@@ -23,12 +23,12 @@ export class CalcBoxComponent implements OnInit {
   onePointTwoFives = 0;
   hundredPlate;
   fiftyFivePlate;
-  fortyFivePlate;
+  fortyFivePlate = true;
   thirtyFivePlate;
-  twentyFivePlate;
-  tenPlate;
-  fivePlate;
-  twoPointFivePlate;
+  twentyFivePlate = true;
+  tenPlate = true;
+  fivePlate = true;
+  twoPointFivePlate = true;
   onePointTwoFivePlate;
 
   constructor(private fb: FormBuilder) {

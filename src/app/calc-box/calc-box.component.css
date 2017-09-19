@@ -1,8 +1,8 @@
-.calcFormCard{
-  margin:20px;
-  width:83%;
-  height:50px;
-  left:150px;
+.calcFormCard {
+  margin: 20px;
+  width: 83%;
+  height: 50px;
+  left: 150px;
 }
 
 .contentCard {
@@ -29,4 +29,10 @@ table {
 
 .barbellDiv {
   display: flex;
+}
+
+.plateCount {
+  border-color: purple;
+  border-style: double;
+  padding: 10px
 }

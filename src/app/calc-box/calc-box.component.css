@@ -1,40 +1,32 @@
-.contentCard{
+.calcFormCard{
   margin:20px;
-  width:250px;
+  width:83%;
   height:50px;
   left:150px;
 }
 
-.infoCard{
-  margin:20px;
-  height:150px;
-  width:700px;
-  left:150px;
+.contentCard {
+  margin: 20px;
+  width: 83%;
+  height: 35%;
+  left: 150px;
+  display: block;
 }
 
-.weightOnBarbellBox{
-  /*position: relative;*/
-  font-weight: bold;
-  font-size: 15px;
-  width:300px;
-  /*left: -5px;*/
+td > div {
+  background-color: black;
+  text-align: center;
 }
 
-#svgresult{
-  /*position: relative;*/
-  /*left: 275px;*/
-}
-#thebar{
-  fill:gray;
+table {
+  border: none;
+  height: 100px;
 }
 
-.plate{
-  fill:black;
+.infoDiv {
+  display: grid;
 }
 
-.plateLabel{
-  fill: white;
-  font-weight:bold;
-  font-size:20px;
-  text-anchor: middle;
+.barbellDiv {
+  display: flex;
 }

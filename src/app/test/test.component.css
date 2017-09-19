@@ -1,16 +1,14 @@
-.contentCard {
-  margin: 20px;
-  width: 1000px;
-  height: 350px;
-  left: 150px;
+form{
+  display: inline-grid;
 }
 
-td > div {
-  background-color: black;
-  text-align: center;
+.contentCard{
+  margin:20px;
+  left:150px;
+  width:150px;
+  height:100px;
 }
 
-table {
-  border: none;
-  height: 100px;
+input, button{
+  margin:5px;
 }

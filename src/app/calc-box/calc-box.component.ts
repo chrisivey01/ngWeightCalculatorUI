@@ -13,12 +13,12 @@ export class CalcBoxComponent implements OnInit {
   rightWeights;
   standardHeight = 0.45;
   blanks = 20;
-  totalWeight;
-  fortyFives;
-  twentyFives;
-  tens;
-  fives;
-  twoPointFives;
+  totalWeight = 0;
+  fortyFives = 0;
+  twentyFives = 0;
+  tens = 0;
+  fives = 0;
+  twoPointFives = 0;
 
   constructor(private fb: FormBuilder) {
   }
@@ -42,43 +42,51 @@ export class CalcBoxComponent implements OnInit {
     this.twoPointFives = 0;
 
     let weight = this.calcForm.controls.targetWeightText.value
-    weight -= 45;
 
-    while (weight >= 5 && this.blanks > 0) {
-      if (weight >= 90) {
-        this.leftWeights.push(45);
-        this.rightWeights.push(45);
-        this.fortyFives += 2;
-        this.totalWeight += 90;
-        weight = weight - 90;
-      } else if (weight >= 50) {
-        this.leftWeights.push(25);
-        this.rightWeights.push(25);
-        this.twentyFives += 2;
-        this.totalWeight += 50;
-        weight = weight - 50;
-      } else if (weight >= 20) {
-        this.leftWeights.push(10);
-        this.rightWeights.push(10);
-        this.tens += 2;
-        this.totalWeight += 20;
-        weight = weight - 20;
-      } else if (weight >= 10) {
-        this.leftWeights.push(5);
-        this.rightWeights.push(5);
-        this.fives += 2;
-        this.totalWeight += 10;
-        weight = weight - 10;
-      } else {
-        this.leftWeights.push(2.5);
-        this.rightWeights.push(2.5);
-        this.twoPointFives += 2;
-        this.totalWeight += 5;
-        weight = weight - 5;
+    if(weight >= 50){
+      weight -= 45;
+
+      while (weight >= 5 && this.blanks > 0) {
+        if (weight >= 90) {
+          this.leftWeights.push(45);
+          this.rightWeights.push(45);
+          this.fortyFives += 2;
+          this.totalWeight += 90;
+          weight = weight - 90;
+        } else if (weight >= 50) {
+          this.leftWeights.push(25);
+          this.rightWeights.push(25);
+          this.twentyFives += 2;
+          this.totalWeight += 50;
+          weight = weight - 50;
+        } else if (weight >= 20) {
+          this.leftWeights.push(10);
+          this.rightWeights.push(10);
+          this.tens += 2;
+          this.totalWeight += 20;
+          weight = weight - 20;
+        } else if (weight >= 10) {
+          this.leftWeights.push(5);
+          this.rightWeights.push(5);
+          this.fives += 2;
+          this.totalWeight += 10;
+          weight = weight - 10;
+        } else {
+          this.leftWeights.push(2.5);
+          this.rightWeights.push(2.5);
+          this.twoPointFives += 2;
+          this.totalWeight += 5;
+          weight = weight - 5;
+        }
+        this.blanks -= 2;
       }
-      this.blanks -= 2;
+
+      this.leftWeights.reverse();
+    }else{
+      this.totalWeight = 0;
     }
 
-    this.leftWeights.reverse();
+
+
   }
 }

@@ -1,5 +1,5 @@
 import {Component, OnInit} from "@angular/core";
-import {Validators, FormBuilder} from "@angular/forms";
+import {FormBuilder, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-calc-box',
@@ -42,8 +42,8 @@ export class CalcBoxComponent implements OnInit {
   });
 
   calculateWeight() {
-    this.leftWeights = []
-    this.rightWeights = []
+    this.leftWeights = [];
+    this.rightWeights = [];
     this.blanks = 20;
     this.totalWeight = 45;
     this.hundreds = 0;
@@ -55,7 +55,7 @@ export class CalcBoxComponent implements OnInit {
     this.twoPointFives = 0;
     this.onePointTwoFives = 0;
 
-    let weight = this.calcForm.controls.targetWeightText.value
+    let weight = this.calcForm.controls.targetWeightText.value;
 
     if(weight >= 50){
       weight -= 45;

@@ -20,39 +20,39 @@
 <md-card class="contentCard">
   <div>
     <table class="plateCount">
-      <tr>
+      <tr *ngIf="hundredPlate">
         <td>100lb Plates:</td>
         <td>{{hundreds}}</td>
       </tr>
-      <tr>
+      <tr *ngIf="fiftyFivePlate">
         <td>55lb Plates:</td>
         <td>{{fiftyFives}}</td>
       </tr>
-      <tr>
+      <tr *ngIf="fortyFivePlate">
         <td>45lb Plates:</td>
         <td>{{fortyFives}}</td>
       </tr>
-      <tr>
+      <tr *ngIf="thirtyFivePlate">
         <td>35lb Plates:</td>
         <td>{{thirtyFives}}</td>
       </tr>
-      <tr>
+      <tr *ngIf="twentyFivePlate">
         <td>25lb Plates:</td>
         <td>{{twentyFives}}</td>
       </tr>
-      <tr>
+      <tr *ngIf="tenPlate">
         <td>10lb Plates:</td>
         <td>{{tens}}</td>
       </tr>
-      <tr>
+      <tr *ngIf="fivePlate">
         <td>5lb Plates:</td>
         <td>{{fives}}</td>
       </tr>
-      <tr>
+      <tr *ngIf="twoPointFivePlate">
         <td>2.5lb Plates:</td>
         <td>{{twoPointFives}}</td>
       </tr>
-      <tr>
+      <tr *ngIf="onePointTwoFivePlate">
         <td>1.25lb Plates:</td>
         <td>{{onePointTwoFives}}</td>
       </tr>

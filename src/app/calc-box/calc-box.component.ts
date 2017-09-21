@@ -47,6 +47,7 @@ export class CalcBoxComponent implements OnInit {
     this.blanks = 20;
     this.totalWeight = 45;
     this.hundreds = 0;
+    this.fiftyFives = 0;
     this.fortyFives = 0;
     this.thirtyFives = 0;
     this.twentyFives = 0;

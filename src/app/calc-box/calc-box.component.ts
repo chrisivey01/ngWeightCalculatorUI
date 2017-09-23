@@ -9,7 +9,7 @@ import {FormBuilder, Validators} from "@angular/forms";
 export class CalcBoxComponent implements OnInit {
   leftWeights;
   rightWeights;
-  standardHeight = 0.45;
+  standardHeight = 0.70;
   blanks = 20;
   totalWeight = 0;
   hundreds = 0;

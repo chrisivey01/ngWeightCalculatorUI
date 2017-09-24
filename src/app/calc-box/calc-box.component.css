@@ -28,12 +28,19 @@ table {
 }
 
 .barbellDiv {
+  position:relative;
   display: flex;
-  height: 200px;
+  left:5%;
+  height: 300px;
+  width: 100%;
 }
 
 .plateCount {
   border-color: purple;
   border-style: double;
   padding: 10px
+}
+
+.barbellContainer{
+  align-content: center;
 }

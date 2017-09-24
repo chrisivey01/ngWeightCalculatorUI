@@ -11,7 +11,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {Routes, RouterModule} from "@angular/router";
 import {LoginComponent} from './login/login.component';
-
+import {FlexLayoutModule} from '@angular/flex-layout';
 import {CalcBoxService} from './calc-box/calc-box.service';
 import {TestService} from './test/test.service'
 import {TestComponent} from './test/test.component'
@@ -44,7 +44,8 @@ const appRoutes: Routes = [
     MdCardModule,
     MdCheckboxModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    FlexLayoutModule
   ],
   providers: [CalcBoxService, TestService],
   bootstrap: [AppComponent]

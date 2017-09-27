@@ -15,12 +15,15 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {CalcBoxService} from './calc-box/calc-box.service';
 import {TestService} from './test/test.service'
 import {TestComponent} from './test/test.component'
+import {MdSelectModule} from "@angular/material";
 
 const appRoutes: Routes = [
   {path: 'login-route', component: LoginComponent},
   {path: 'calc-box-route', component: CalcBoxComponent},
   {path: 'test-route', component: TestComponent}
 ];
+
+
 
 @NgModule({
   declarations: [
@@ -31,6 +34,8 @@ const appRoutes: Routes = [
     LoginComponent,
     TestComponent
   ],
+
+
   imports: [
     RouterModule.forRoot(
       appRoutes
@@ -45,10 +50,13 @@ const appRoutes: Routes = [
     MdCheckboxModule,
     ReactiveFormsModule,
     HttpModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MdSelectModule
   ],
   providers: [CalcBoxService, TestService],
   bootstrap: [AppComponent]
+
+
 })
 export class AppModule {
 }

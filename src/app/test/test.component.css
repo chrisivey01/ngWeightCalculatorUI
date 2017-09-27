@@ -5,10 +5,31 @@ form{
 .contentCard{
   margin:20px;
   left:150px;
-  width:150px;
-  height:100px;
+  width:265px;
+  height:50px;
 }
 
 input, button{
   margin:5px;
 }
+.squatGraph {
+  margin: 20px;
+  width: 83%;
+  height: 50px;
+  left: 150px;
+}
+
+.benchGraph{
+  margin: 20px;
+  width: 83%;
+  height: 50px;
+  left: 150px;
+}
+
+.deadLiftGraph{
+  margin: 20px;
+  width: 83%;
+  height: 50px;
+  left: 150px;
+}
+

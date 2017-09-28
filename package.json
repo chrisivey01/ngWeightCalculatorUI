@@ -18,7 +18,7 @@
     "@angular/common": "*",
     "@angular/compiler": "*",
     "@angular/core": "*",
-    "@angular/flex-layout": "^2.0.0-beta.9",
+    "@angular/flex-layout": "^2.0.0-rc.1",
     "@angular/forms": "*",
     "@angular/http": "*",
     "@angular/material": "*",
@@ -37,7 +37,7 @@
     "ts-node": "^3.3.0",
     "tslint": "^5.7.0",
     "typescript": "^2.5.3",
-    "zone.js": "*"
+    "zone.js": "^0.8.18"
   },
   "devDependencies": {
     "@angular/cli": "*",

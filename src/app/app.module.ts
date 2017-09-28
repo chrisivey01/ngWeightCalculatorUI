@@ -6,7 +6,7 @@ import {CalcBoxComponent} from './calc-box/calc-box.component';
 import {TitleBarComponent} from './title-bar/title-bar.component';
 import {SideBarComponent} from './side-bar/side-bar.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCardModule, MatCheckboxModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatCheckboxModule, MatTableModule, MatSelectModule} from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {Routes, RouterModule} from "@angular/router";
@@ -16,7 +16,7 @@ import {CalcBoxService} from './calc-box/calc-box.service';
 import {TestService} from './test/test.service';
 import {LoginService} from "./login/login.service";
 import {TestComponent} from './test/test.component';
-import {MdSelectModule} from "@angular/material";
+import {CdkTableModule} from '@angular/cdk/table';
 
 const appRoutes: Routes = [
   {path: 'login-route', component: LoginComponent},
@@ -42,6 +42,8 @@ const appRoutes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    CdkTableModule,
+    MatTableModule,
     MatButtonModule,
     MatCardModule,
     MatCheckboxModule,

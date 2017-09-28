@@ -50,7 +50,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     HttpModule,
     FlexLayoutModule,
-    MdSelectModule
+    MatSelectModule
   ],
   providers: [SideBarComponent, LoginComponent, CalcBoxService, TestService, LoginService],
   bootstrap: [AppComponent]

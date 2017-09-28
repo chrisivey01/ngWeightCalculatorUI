@@ -6,61 +6,18 @@
       {{three.viewValue}}
     </md-option>
   </md-select>
-
-
 </md-card>
-<div *ngIf="squatGraph">
-  <md-card class="squatGraph">
 
-    <div class="flex-container">
-      <div class="flex-item" fxFlex="20%"> squat</div>
-      <div class="flex-item" fxFlex> squat</div>
-      <div class="flex-item" fxFlex="25%"> squat</div>
-    </div>
-    <br/>
-    <br/>
-    <div class="flex-container">
-      <div class="flex-item" fxFlex="20%" fxFlex.xs="40%"> squat</div>
-      <div class="flex-item" fxFlex> squat</div>
-      <div class="flex-item" fxFlex="25px"> squat</div>
-    </div>
 
-  </md-card>
+<div class = "squatTableContainer">
+  <md-table #table [dataSource]="dataSource">
+
+
+
+  </md-table>
 </div>
 
-<div *ngIf="benchGraph">
-  <md-card class="benchGraph">
 
-    <div class="flex-container">
-      <div class="flex-item" fxFlex="20%"> bench</div>
-      <div class="flex-item" fxFlex> bench</div>
-      <div class="flex-item" fxFlex="25%"> bench</div>
-    </div>
-    <br/>
-    <br/>
-    <div class="flex-container">
-      <div class="flex-item" fxFlex="20%" fxFlex.xs="40%"> bench</div>
-      <div class="flex-item" fxFlex> bench</div>
-      <div class="flex-item" fxFlex="25px"> bench</div>
-    </div>
 
-  </md-card>
-</div>
-<div *ngIf="deadLiftGraph">
-  <md-card class="deadLiftGraph">
+<button md-raised-button color="primary" class="saveButton">Save</button>
 
-    <div class="flex-container">
-      <div class="flex-item" fxFlex="20%"> deadlift</div>
-      <div class="flex-item" fxFlex> deadlift</div>
-      <div class="flex-item" fxFlex="25%"> deadlift</div>
-    </div>
-    <br/>
-    <br/>
-    <div class="flex-container">
-      <div class="flex-item" fxFlex="20%" fxFlex.xs="40%"> deadlift</div>
-      <div class="flex-item" fxFlex> deadlift</div>
-      <div class="flex-item" fxFlex="25px"> deadlift</div>
-    </div>
-
-  </md-card>
-</div>

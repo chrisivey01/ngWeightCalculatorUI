@@ -1,6 +1,6 @@
 import {Component, OnInit} from "@angular/core";
-import {TestService} from "./test.service";
-import {FormBuilder, Validators} from "@angular/forms";
+import {DataSource} from "@angular/cdk/collections";
+import {Observable} from "rxjs/Observable";
 
 @Component({
   selector: 'app-test',
@@ -19,23 +19,14 @@ export class TestComponent implements OnInit {
     {value: 'deadLift', viewValue: 'Deadlift'}
   ];
 
-  constructor(private testService: TestService) {
-    this.test();
+  displayedColumns = ['week1', 'week2', 'week3', 'week4'];
+  dataSource = new WeightDataSource();
+
+
+  constructor() {
   }
 
   ngOnInit() {
-  }
-
-  test() {
-    this.testService.testService()
-      .subscribe(
-        response => {
-          this.serviceValue = response.text()
-        },
-        err => {
-          console.log(err);
-        });
-    ;
   }
 
   picker(event) {
@@ -49,7 +40,25 @@ export class TestComponent implements OnInit {
       this.squatGraph = true;
     else if (event.value == 'deadLift')
       this.deadLiftGraph = true;
+  }
+}
 
+export interface Element {
+  position: number;
+  week1: number;
+  week2: number;
+  week3: number;
+  week4: number;
+}
+
+const data: Element[] = [{position: 1, week1: 225, week2: 225, week3: 245, week4: 255}];
+
+export class WeightDataSource extends DataSource<any> {
+  /** Connect function called by the table to retrieve one stream containing the data to render. */
+  connect(): Observable<Element[]> {
+    return Observable.of(data);
   }
 
+  disconnect() {
+  }
 }

@@ -1,9 +1,7 @@
 <md-card class="loginCard">
-  <form [formGroup]="loginForm" (ngSubmit)="doLogin($event)">
+  <form [formGroup]="loginForm" (ngSubmit)="doLogin()">
     <input formControlName="email" type="email" placeholder="Your email">
     <input formControlName="password" type="password" placeholder="Your password">
-    <button type="submit">Log in</button>
+    <button md-raised-button color="primary" type="submit">Log in</button>
   </form>
 </md-card>
-
-

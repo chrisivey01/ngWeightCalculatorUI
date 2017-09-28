@@ -1,14 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import {Validators, FormBuilder} from "@angular/forms";
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, Validators} from "@angular/forms";
+import {LoginService} from "./login.service";
+import {CanActivate} from '@angular/router';
+import {SideBarComponent} from "../side-bar/side-bar.component";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements CanActivate, OnInit {
 
-  constructor(public fb: FormBuilder) {
+  constructor(public fb: FormBuilder, public loginService: LoginService, private sideBarComponent: SideBarComponent) {
+
   }
 
   public loginForm = this.fb.group({
@@ -16,15 +20,26 @@ export class LoginComponent implements OnInit {
     password: ["", Validators.required]
   });
 
-  doLogin(event) {
-    console.log(event);
-    console.log(this.loginForm.value);
-    console.log(this.loginForm.controls.email.value);
-    console.log(this.loginForm.controls.password.value);
-
+  doLogin() {
+    this.loginService.login(
+      {
+        email: this.loginForm.controls.email.value,
+        password: this.loginForm.controls.password.value
+      }
+    ).subscribe(
+      response => {
+        this.loginService.setIsLoggedIn('true' === response.text())
+        this.sideBarComponent.checkLogin()
+      },
+      err => {
+        console.log(err);
+      });
   }
 
   ngOnInit() {
   }
 
+  canActivate() {
+    return this.loginService.getIsLoggedIn();
+  }
 }

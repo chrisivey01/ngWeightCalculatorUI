@@ -13,9 +13,10 @@ import {Routes, RouterModule} from "@angular/router";
 import {LoginComponent} from './login/login.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {CalcBoxService} from './calc-box/calc-box.service';
-import {TestService} from './test/test.service'
+import {TestService} from './test/test.service';
 import {LoginService} from "./login/login.service";
 import {TestComponent} from './test/test.component';
+import {MdSelectModule} from "@angular/material";
 
 const appRoutes: Routes = [
   {path: 'login-route', component: LoginComponent},
@@ -46,7 +47,8 @@ const appRoutes: Routes = [
     MatCheckboxModule,
     ReactiveFormsModule,
     HttpModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MdSelectModule
   ],
   providers: [SideBarComponent, LoginComponent, CalcBoxService, TestService, LoginService],
   bootstrap: [AppComponent]

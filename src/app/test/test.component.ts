@@ -9,6 +9,15 @@ import {FormBuilder, Validators} from "@angular/forms";
 })
 export class TestComponent implements OnInit {
   serviceValue;
+  squatGraph = false;
+  benchGraph = false;
+  deadLiftGraph = false;
+
+  threes = [
+    {value: 'squat', viewValue: 'Squat'},
+    {value: 'bench', viewValue: 'Bench'},
+    {value: 'deadLift', viewValue: 'Deadlift'}
+  ];
 
   constructor(private testService: TestService) {
     this.test();
@@ -27,6 +36,20 @@ export class TestComponent implements OnInit {
           console.log(err);
         });
     ;
+  }
+
+  picker(event) {
+    this.benchGraph = false;
+    this.squatGraph = false;
+    this.deadLiftGraph = false;
+
+    if (event.value == 'bench')
+      this.benchGraph = true;
+    else if (event.value == 'squat')
+      this.squatGraph = true;
+    else if (event.value == 'deadLift')
+      this.deadLiftGraph = true;
+
   }
 
 }

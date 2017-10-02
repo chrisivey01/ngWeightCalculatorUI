@@ -8,15 +8,81 @@
   </md-select>
 </md-card>
 
+<div class = "benchTableContainer">
 
-<div class = "squatTableContainer">
+</div>
+
+<div class = "deadliftTableContainer">
+
+</div>
+
+<div class = "squatGraph">
   <md-table #table [dataSource]="dataSource">
 
+    <ng-container mdColumnDef="position">
+      <md-header-cell *mdHeaderCellDef> 1 </md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element.squatPosition}} </md-cell>
+    </ng-container>
 
+    <ng-container mdColumnDef="week1">
+      <md-header-cell *mdHeaderCellDef> Week 1 </md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element.squatWeek1}} </md-cell>
+    </ng-container>
+
+    <ng-container mdColumnDef="week2">
+      <md-header-cell *mdHeaderCellDef> Week 2 </md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element.squatWeek2}} </md-cell>
+    </ng-container>
+
+    <ng-container mdColumnDef="week3">
+      <md-header-cell *mdHeaderCellDef> Week 3 </md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element.squatWeek3}} </md-cell>
+    </ng-container>
+
+    <ng-container mdColumnDef="week4">
+      <md-header-cell *mdHeaderCellDef> Week 4 </md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element.squatWeek4}} </md-cell>
+    </ng-container>
+
+    <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
+    <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
 
   </md-table>
 </div>
 
+<!--<div class = "benchGraph">-->
+  <!--<md-table #table [dataSource]="dataSource">-->
+
+    <!--<ng-container mdColumnDef="position">-->
+      <!--<md-header-cell *mdHeaderCellDef> 1 </md-header-cell>-->
+      <!--<md-cell *mdCellDef="let element"> {{element.benchPosition}} </md-cell>-->
+    <!--</ng-container>-->
+
+    <!--<ng-container mdColumnDef="week1">-->
+      <!--<md-header-cell *mdHeaderCellDef> Week 1 </md-header-cell>-->
+      <!--<md-cell *mdCellDef="let element"> {{element.benchWeek1}} </md-cell>-->
+    <!--</ng-container>-->
+
+    <!--<ng-container mdColumnDef="week2">-->
+      <!--<md-header-cell *mdHeaderCellDef> Week 2 </md-header-cell>-->
+      <!--<md-cell *mdCellDef="let element"> {{element.benchWeek2}} </md-cell>-->
+    <!--</ng-container>-->
+
+    <!--<ng-container mdColumnDef="week3">-->
+      <!--<md-header-cell *mdHeaderCellDef> Week 3 </md-header-cell>-->
+      <!--<md-cell *mdCellDef="let element"> {{element.benchWeek3}} </md-cell>-->
+    <!--</ng-container>-->
+
+    <!--<ng-container mdColumnDef="week4">-->
+      <!--<md-header-cell *mdHeaderCellDef> Week 4 </md-header-cell>-->
+      <!--<md-cell *mdCellDef="let element"> {{element.benchWeek4}} </md-cell>-->
+    <!--</ng-container>-->
+
+    <!--<md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>-->
+    <!--<md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>-->
+
+  <!--</md-table>-->
+<!--</div>-->
 
 
 <button md-raised-button color="primary" class="saveButton">Save</button>

@@ -1,6 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {Observable} from "rxjs/Observable";
 import {DataSource} from '@angular/cdk/collections';
+import 'rxjs/add/observable/of';
 
 @Component({
   selector: 'app-test',
@@ -44,14 +45,20 @@ export class TestComponent implements OnInit {
 }
 
 export interface Element {
-  position: number;
-  week1: number;
-  week2: number;
-  week3: number;
-  week4: number;
+  squatPosition: number;
+  squatWeek1: number;
+  squatWeek2: number;
+  squatWeek3: number;
+  squatWeek4: number;
+
+  // benchPosition:number;
+  // benchWeek1: number;
+  // benchWeek2: number;
+  // benchWeek3: number;
+  // benchWeek4: number;
 }
 
-const data: Element[] = [{position: 1, week1: 225, week2: 225, week3: 245, week4: 255}];
+const data: Element[] = [{squatPosition: 1, squatWeek1: 225, squatWeek2: 225, squatWeek3: 245, squatWeek4: 255}];
 
 export class WeightDataSource extends DataSource<any> {
   /** Connect function called by the table to retrieve one stream containing the data to render. */

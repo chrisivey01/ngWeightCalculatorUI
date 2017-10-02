@@ -13,24 +13,18 @@ input, button{
   margin:5px;
 }
 .squatGraph {
-  margin: 20px;
-  width: 83%;
-  height: 50px;
-  left: 150px;
+  margin-left: 170px;
+  width: 50%
 }
 
 .benchGraph{
-  margin: 20px;
-  width: 83%;
-  height: 50px;
-  left: 150px;
+  margin-left: 170px;
+  width: 50%
 }
 
 .deadLiftGraph{
-  margin: 20px;
-  width: 83%;
-  height: 50px;
-  left: 150px;
+  margin-left: 170px;
+  width: 50%
 }
 
 .saveButton{

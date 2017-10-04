@@ -20,7 +20,7 @@ import {CdkTableModule} from '@angular/cdk/table';
 
 const appRoutes: Routes = [
   {path: 'login-route', component: LoginComponent},
-  {path: 'calc-box-route', component: CalcBoxComponent, canActivate: [LoginComponent]},
+  {path: '', component: CalcBoxComponent, canActivate: [LoginComponent]},
   {path: 'test-route', component: TestComponent, canActivate: [LoginComponent]}
 ];
 

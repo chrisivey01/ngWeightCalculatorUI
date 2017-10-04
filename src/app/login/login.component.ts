@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
 import {LoginService} from "./login.service";
-import {CanActivate} from '@angular/router';
+import {CanActivate, Router} from '@angular/router';
 import {SideBarComponent} from "../side-bar/side-bar.component";
 
 @Component({
@@ -11,7 +11,7 @@ import {SideBarComponent} from "../side-bar/side-bar.component";
 })
 export class LoginComponent implements CanActivate, OnInit {
 
-  constructor(public fb: FormBuilder, public loginService: LoginService, private sideBarComponent: SideBarComponent) {
+  constructor(public fb: FormBuilder, public loginService: LoginService, private sideBarComponent: SideBarComponent, private router: Router) {
 
   }
 
@@ -28,8 +28,8 @@ export class LoginComponent implements CanActivate, OnInit {
       }
     ).subscribe(
       response => {
-        this.loginService.setIsLoggedIn('true' === response.text())
-        this.sideBarComponent.checkLogin()
+        this.loginService.setIsLoggedIn(response.ok)
+        this.router.navigate([''])
       },
       err => {
         console.log(err);
@@ -40,6 +40,13 @@ export class LoginComponent implements CanActivate, OnInit {
   }
 
   canActivate() {
-    return this.loginService.getIsLoggedIn();
+    if(!this.loginService.getIsLoggedIn()){
+      this.router.navigate(['login-route'])
+      return false
+    }else{
+      return true;
+    }
+
+
   }
 }

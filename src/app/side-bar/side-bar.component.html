@@ -1,13 +1,10 @@
 <nav>
-  <ul>
-    <li *ngIf="!isLoggedIn">
-      <button md-raised-button color="primary" (click)="checkLogin()" routerLink="/login-route" routerLinkActive="active">Login</button>
+  <ul *ngIf="isLoggedIn()">
+    <li>
+      <button md-raised-button color="primary" routerLink="/">Calculator</button>
     </li>
-    <li *ngIf="isLoggedIn">
-      <button md-raised-button color="primary" (click)="checkLogin()" routerLink="/calc-box-route">Calculator</button>
-    </li>
-    <li *ngIf="isLoggedIn">
-      <button md-raised-button color="primary" (click)="checkLogin()" routerLink="/test-route">Test</button>
+    <li>
+      <button md-raised-button color="primary" routerLink="/test-route">Test</button>
     </li>
   </ul>
 </nav>

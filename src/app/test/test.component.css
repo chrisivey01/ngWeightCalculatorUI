@@ -8,14 +8,42 @@ form{
   width:265px;
   height:50px;
 }
+.weightInputs{
+  margin-left:170px;
+}
 
 input, button{
   margin:5px;
+}
+
+
+td{
+  border-color:black;
+  border-style:solid;
 }
 .squatGraph {
   margin-left: 170px;
   width: 50%
 }
+
+#squatTable{
+  padding:40px;
+  border-style:solid;
+  color: #6712d8;
+}
+
+#squatGoalTable{
+  padding:40px;
+  border-style:solid;
+  color: #6712d8;
+}
+
+.weightPopUp{
+  margin-left:400px;
+}
+
+
+
 
 .benchGraph{
   margin-left: 170px;

@@ -1,4 +1,4 @@
-<md-card class="calcFormCard">
+<mat-card class="calcFormCard">
   <form [formGroup]="calcForm" (ngSubmit)="calculateWeight()">
     <input formControlName="targetWeightText" type="email" placeholder="Target Weight">
     <button>Calculate</button>
@@ -6,19 +6,19 @@
   <br/>
 
   Select your plates:
-  <md-checkbox [(ngModel)]="hundredPlate">100</md-checkbox>
-  <md-checkbox [(ngModel)]="fiftyFivePlate">55</md-checkbox>
-  <md-checkbox [(ngModel)]="fortyFivePlate">45</md-checkbox>
-  <md-checkbox [(ngModel)]="thirtyFivePlate">35</md-checkbox>
-  <md-checkbox [(ngModel)]="twentyFivePlate">25</md-checkbox>
-  <md-checkbox [(ngModel)]="tenPlate">10</md-checkbox>
-  <md-checkbox [(ngModel)]="fivePlate">5</md-checkbox>
-  <md-checkbox [(ngModel)]="twoPointFivePlate">2.5</md-checkbox>
-  <md-checkbox [(ngModel)]="onePointTwoFivePlate">1.25</md-checkbox>
-</md-card>
+  <mat-checkbox [(ngModel)]="hundredPlate">100</mat-checkbox>
+  <mat-checkbox [(ngModel)]="fiftyFivePlate">55</mat-checkbox>
+  <mat-checkbox [(ngModel)]="fortyFivePlate">45</mat-checkbox>
+  <mat-checkbox [(ngModel)]="thirtyFivePlate">35</mat-checkbox>
+  <mat-checkbox [(ngModel)]="twentyFivePlate">25</mat-checkbox>
+  <mat-checkbox [(ngModel)]="tenPlate">10</mat-checkbox>
+  <mat-checkbox [(ngModel)]="fivePlate">5</mat-checkbox>
+  <mat-checkbox [(ngModel)]="twoPointFivePlate">2.5</mat-checkbox>
+  <mat-checkbox [(ngModel)]="onePointTwoFivePlate">1.25</mat-checkbox>
+</mat-card>
 
 <div class="flex-container">
-  <md-card class="contentCard">
+  <mat-card class="contentCard">
     <div fxLayout="row">
       <div fxFlex="75%">
         <table class="plateCount">
@@ -110,6 +110,6 @@
         </tr>
       </table>
     </div>
-  </md-card>
+  </mat-card>
 </div>
 

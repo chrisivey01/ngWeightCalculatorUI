@@ -2,6 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {Observable} from "rxjs/Observable";
 import {DataSource} from '@angular/cdk/collections';
 import 'rxjs/add/observable/of';
+import {element} from "protractor";
 
 @Component({
   selector: 'app-test',
@@ -13,6 +14,12 @@ export class TestComponent implements OnInit {
   squatGraph = false;
   benchGraph = false;
   deadLiftGraph = false;
+  week1Weight: number;
+  week1SquatWeight: number;
+  week1GoalSquatWeight: string;
+  week2Weight: number;
+  week3Weight: number;
+  week4Weight: number;
 
   threes = [
     {value: 'squat', viewValue: 'Squat'},
@@ -42,20 +49,38 @@ export class TestComponent implements OnInit {
     else if (event.value == 'deadLift')
       this.deadLiftGraph = true;
   }
+
+
+  addToTable() {
+
+    let a = this.week1Weight * 1.025;
+    let b = this.week2Weight * 1.025;
+    let c = this.week3Weight * 1.025;
+    let d = this.week4Weight * 1.025;
+
+
+    document.getElementById('week1GoalSquatWeight').innerHTML = a.toFixed()
+    document.getElementById('week2GoalSquatWeight').innerHTML = b.toFixed()
+    document.getElementById('week3GoalSquatWeight').innerHTML = c.toFixed()
+    document.getElementById('week4GoalSquatWeight').innerHTML = d.toFixed()
+
+
+
+  }
 }
 
-export interface Element {
+export interface Element  {
   squatPosition: number;
   squatWeek1: number;
   squatWeek2: number;
   squatWeek3: number;
   squatWeek4: number;
 
-  // benchPosition:number;
-  // benchWeek1: number;
-  // benchWeek2: number;
-  // benchWeek3: number;
-  // benchWeek4: number;
+// benchPosition:number;
+// benchWeek1: number;
+// benchWeek2: number;
+// benchWeek3: number;
+// benchWeek4: number;
 }
 
 const data: Element[] = [{squatPosition: 1, squatWeek1: 225, squatWeek2: 225, squatWeek3: 245, squatWeek4: 255}];
@@ -65,7 +90,8 @@ export class WeightDataSource extends DataSource<any> {
   connect(): Observable<Element[]> {
     return Observable.of(data);
   }
-
   disconnect() {
   }
+
+
 }

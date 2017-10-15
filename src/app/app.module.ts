@@ -17,6 +17,7 @@ import {TestService} from './test/test.service';
 import {LoginService} from "./login/login.service";
 import {TestComponent} from './test/test.component';
 import {CdkTableModule} from '@angular/cdk/table';
+import { AskWeightPopUpComponent } from './ask-weight-pop-up/ask-weight-pop-up.component';
 
 const appRoutes: Routes = [
   {path: 'login-route', component: LoginComponent},
@@ -31,7 +32,8 @@ const appRoutes: Routes = [
     TitleBarComponent,
     SideBarComponent,
     LoginComponent,
-    TestComponent
+    TestComponent,
+    AskWeightPopUpComponent
   ],
   imports: [
     RouterModule.forRoot(

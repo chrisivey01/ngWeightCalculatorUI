@@ -1,89 +1,155 @@
-<md-card class="contentCard">
+<mat-card class="contentCard">
   {{serviceValue}}
   <b>Pick your lift: </b>
-  <md-select placeholder="Big Three" floatPlaceholder="never" (change)="picker($event)">
-    <md-option *ngFor="let three of threes" [value]="three.value">
-      {{three.viewValue}}
-    </md-option>
-  </md-select>
-</md-card>
+  <mat-form-field>
+    <mat-select placeholder="Big Three" floatPlaceholder="always" (change)="picker($event)">
+      <mat-option *ngFor="let three of threes" [value]="three.value">
+        {{three.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-card>
 
-<div class = "benchTableContainer">
+
+<div class=weightInputs>
+  <md-form-field>
+    <input mdInput [(ngModel)]="week1Weight" placeholder="Week 1 weight">
+  </md-form-field>
+  <md-form-field>
+    <input mdInput [(ngModel)]="week2Weight" placeholder="Week 2 weight">
+  </md-form-field>
+  <md-form-field>
+    <input mdInput [(ngModel)]="week3Weight" placeholder="Week 3 weight">
+  </md-form-field>
+  <md-form-field>
+    <input mdInput [(ngModel)]="week4Weight" placeholder="Week 4 weight">
+  </md-form-field>
+</div>
+
+<button mat-raised-button color="primary" class="weightPopUp" (click)="addToTable()">Input Weights</button>
+
+
+<div class="benchTableContainer">
 
 </div>
 
-<div class = "deadliftTableContainer">
+<div class="deadliftTableContainer">
 
 </div>
+<div class="flex-container">
+  <div fxLayout="row">
+    <div fxFlex="40%">
+      <div class="squatGraph">
+        <label id="tableTitle">Weight Chart</label>
+        <table id="squatTable" (click)="addToTable()">
+          <thead>
+          <tr>
+            <td>Week 1</td>
+            <td>Week 2</td>
+            <td>Week 3</td>
+            <td>Week 4</td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td id="week1SquatWeight">{{week1Weight}}</td>
+            <td id="week2SquatWeight">{{week2Weight}}</td>
+            <td id="week3SquatWeight">{{week3Weight}}</td>
+            <td id="week4SquatWeight">{{week4Weight}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div fxFlex="40%">
+      <div class="squatGoalGraph">
+        <label id="goalTitle">Goal Chart</label>
+        <table id="squatGoalTable" (click)="addToTable()">
+          <thead>
+          <tr>
+            <td>Week 1</td>
+            <td>Week 2</td>
+            <td>Week 3</td>
+            <td>Week 4</td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td id="week1GoalSquatWeight"></td>
+            <td id="week2GoalSquatWeight"></td>
+            <td id="week3GoalSquatWeight"></td>
+            <td id="week4GoalSquatWeight"></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!--<mat-table #table [dataSource]="dataSource">-->
 
-<div class = "squatGraph">
-  <md-table #table [dataSource]="dataSource">
+  <!--<ng-container matColumnDef="position">-->
+  <!--<mat-header-cell *matHeaderCellDef> 1</mat-header-cell>-->
+  <!--<mat-cell *matCellDef="let element"> {{element.squatPosition}}</mat-cell>-->
+  <!--</ng-container>-->
 
-    <ng-container mdColumnDef="position">
-      <md-header-cell *mdHeaderCellDef> 1 </md-header-cell>
-      <md-cell *mdCellDef="let element"> {{element.squatPosition}} </md-cell>
-    </ng-container>
+  <!--<ng-container matColumnDef="week1">-->
+  <!--<mat-header-cell *matHeaderCellDef> Week 1</mat-header-cell>-->
+  <!--<mat-cell [(ngModel)]="week1ForSquats"> </mat-cell>-->
+  <!--</ng-container>-->
 
-    <ng-container mdColumnDef="week1">
-      <md-header-cell *mdHeaderCellDef> Week 1 </md-header-cell>
-      <md-cell *mdCellDef="let element"> {{element.squatWeek1}} </md-cell>
-    </ng-container>
+  <!--<ng-container matColumnDef="week2">-->
+  <!--<mat-header-cell *matHeaderCellDef> Week 2</mat-header-cell>-->
+  <!--<mat-cell *matCellDef="let element"> {{element.squatWeek2}}</mat-cell>-->
+  <!--</ng-container>-->
 
-    <ng-container mdColumnDef="week2">
-      <md-header-cell *mdHeaderCellDef> Week 2 </md-header-cell>
-      <md-cell *mdCellDef="let element"> {{element.squatWeek2}} </md-cell>
-    </ng-container>
+  <!--<ng-container matColumnDef="week3">-->
+  <!--<mat-header-cell *matHeaderCellDef> Week 3</mat-header-cell>-->
+  <!--<mat-cell *matCellDef="let element"> {{element.squatWeek3}}</mat-cell>-->
+  <!--</ng-container>-->
 
-    <ng-container mdColumnDef="week3">
-      <md-header-cell *mdHeaderCellDef> Week 3 </md-header-cell>
-      <md-cell *mdCellDef="let element"> {{element.squatWeek3}} </md-cell>
-    </ng-container>
+  <!--<ng-container matColumnDef="week4">-->
+  <!--<mat-header-cell *matHeaderCellDef> Week 4</mat-header-cell>-->
+  <!--<mat-cell *matCellDef="let element"> {{element.squatWeek4}}</mat-cell>-->
+  <!--</ng-container>-->
 
-    <ng-container mdColumnDef="week4">
-      <md-header-cell *mdHeaderCellDef> Week 4 </md-header-cell>
-      <md-cell *mdCellDef="let element"> {{element.squatWeek4}} </md-cell>
-    </ng-container>
+  <!--<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>-->
+  <!--<mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>-->
 
-    <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
-    <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
+  <!--</mat-table>-->
+  <!--<div class = "benchGraph">-->
+  <!--<mat-table #table [dataSource]="dataSource">-->
 
-  </md-table>
-</div>
+  <!--<ng-container matColumnDef="position">-->
+  <!--<mat-header-cell *matHeaderCellDef> 1 </mat-header-cell>-->
+  <!--<mat-cell *matCellDef="let element"> {{element.benchPosition}} </mat-cell>-->
+  <!--</ng-container>-->
 
-<!--<div class = "benchGraph">-->
-  <!--<md-table #table [dataSource]="dataSource">-->
+  <!--<ng-container matColumnDef="week1">-->
+  <!--<mat-header-cell *matHeaderCellDef> Week 1 </mat-header-cell>-->
+  <!--<mat-cell *matCellDef="let element"> {{element.benchWeek1}} </mat-cell>-->
+  <!--</ng-container>-->
 
-    <!--<ng-container mdColumnDef="position">-->
-      <!--<md-header-cell *mdHeaderCellDef> 1 </md-header-cell>-->
-      <!--<md-cell *mdCellDef="let element"> {{element.benchPosition}} </md-cell>-->
-    <!--</ng-container>-->
+  <!--<ng-container matColumnDef="week2">-->
+  <!--<mat-header-cell *matHeaderCellDef> Week 2 </mat-header-cell>-->
+  <!--<mat-cell *matCellDef="let element"> {{element.benchWeek2}} </mat-cell>-->
+  <!--</ng-container>-->
 
-    <!--<ng-container mdColumnDef="week1">-->
-      <!--<md-header-cell *mdHeaderCellDef> Week 1 </md-header-cell>-->
-      <!--<md-cell *mdCellDef="let element"> {{element.benchWeek1}} </md-cell>-->
-    <!--</ng-container>-->
+  <!--<ng-container matColumnDef="week3">-->
+  <!--<mat-header-cell *matHeaderCellDef> Week 3 </mat-header-cell>-->
+  <!--<mat-cell *matCellDef="let element"> {{element.benchWeek3}} </mat-cell>-->
+  <!--</ng-container>-->
 
-    <!--<ng-container mdColumnDef="week2">-->
-      <!--<md-header-cell *mdHeaderCellDef> Week 2 </md-header-cell>-->
-      <!--<md-cell *mdCellDef="let element"> {{element.benchWeek2}} </md-cell>-->
-    <!--</ng-container>-->
+  <!--<ng-container matColumnDef="week4">-->
+  <!--<mat-header-cell *matHeaderCellDef> Week 4 </mat-header-cell>-->
+  <!--<mat-cell *matCellDef="let element"> {{element.benchWeek4}} </mat-cell>-->
+  <!--</ng-container>-->
 
-    <!--<ng-container mdColumnDef="week3">-->
-      <!--<md-header-cell *mdHeaderCellDef> Week 3 </md-header-cell>-->
-      <!--<md-cell *mdCellDef="let element"> {{element.benchWeek3}} </md-cell>-->
-    <!--</ng-container>-->
+  <!--<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>-->
+  <!--<mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>-->
 
-    <!--<ng-container mdColumnDef="week4">-->
-      <!--<md-header-cell *mdHeaderCellDef> Week 4 </md-header-cell>-->
-      <!--<md-cell *mdCellDef="let element"> {{element.benchWeek4}} </md-cell>-->
-    <!--</ng-container>-->
-
-    <!--<md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>-->
-    <!--<md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>-->
-
-  <!--</md-table>-->
-<!--</div>-->
+  <!--</mat-table>-->
+  <!--</div>-->
 
 
-<button md-raised-button color="primary" class="saveButton">Save</button>
+  <button mat-raised-button color="primary" class="saveButton">Save</button>
 

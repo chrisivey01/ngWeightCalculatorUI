@@ -53,20 +53,31 @@ export class TestComponent implements OnInit {
 
   addToTable() {
 
-    let a = this.week1Weight * 1.025;
-    let b = this.week2Weight * 1.025;
-    let c = this.week3Weight * 1.025;
-    let d = this.week4Weight * 1.025;
 
+    let a = 2* Math.round(this.week1Weight * 1.025/2);
+    if(isNaN(a)){
+      a = 0;
+    }
+    let b = 2* Math.round(this.week2Weight * 1.025/2);
+    if(isNaN(b)){
+      b = 0;
+    }
+    let c = 2* Math.round(this.week3Weight * 1.025/2);
+    if(isNaN(c)){
+      c = 0;
+    }
+    let d = 2* Math.round(this.week4Weight * 1.025/2);
+    if(isNaN(d)){
+      d = 0;
+    }
 
     document.getElementById('week1GoalSquatWeight').innerHTML = a.toFixed()
     document.getElementById('week2GoalSquatWeight').innerHTML = b.toFixed()
     document.getElementById('week3GoalSquatWeight').innerHTML = c.toFixed()
     document.getElementById('week4GoalSquatWeight').innerHTML = d.toFixed()
 
-
-
   }
+
 }
 
 export interface Element  {

@@ -29,18 +29,11 @@
 <button mat-raised-button color="primary" class="weightPopUp" (click)="addToTable()">Calculate Goals</button>
 
 
-<div class="benchTableContainer">
-
-</div>
-
-<div class="deadliftTableContainer">
-
-</div>
-<div class="flex-container">
+<div class="squat-container" *ngIf="squatGraph">
   <div fxLayout="row">
     <div fxFlex="40%">
       <div class="squatGraph">
-        <label id="tableTitle">Weight Chart</label>
+        <label id="tableTitle" style="color:hotpink">Weight Chart</label>
         <table id="squatTable" (click)="addToTable()">
           <thead>
           <tr>
@@ -63,7 +56,7 @@
     </div>
     <div fxFlex="40%">
       <div class="squatGoalGraph">
-        <label id="goalTitle">Goal Chart</label>
+        <label id="goalTitle" style="color:hotpink">Goal Chart</label>
         <table id="squatGoalTable" (click)="addToTable()">
           <thead>
           <tr>
@@ -85,71 +78,110 @@
       </div>
     </div>
   </div>
-  <!--<mat-table #table [dataSource]="dataSource">-->
-
-  <!--<ng-container matColumnDef="position">-->
-  <!--<mat-header-cell *matHeaderCellDef> 1</mat-header-cell>-->
-  <!--<mat-cell *matCellDef="let element"> {{element.squatPosition}}</mat-cell>-->
-  <!--</ng-container>-->
-
-  <!--<ng-container matColumnDef="week1">-->
-  <!--<mat-header-cell *matHeaderCellDef> Week 1</mat-header-cell>-->
-  <!--<mat-cell [(ngModel)]="week1ForSquats"> </mat-cell>-->
-  <!--</ng-container>-->
-
-  <!--<ng-container matColumnDef="week2">-->
-  <!--<mat-header-cell *matHeaderCellDef> Week 2</mat-header-cell>-->
-  <!--<mat-cell *matCellDef="let element"> {{element.squatWeek2}}</mat-cell>-->
-  <!--</ng-container>-->
-
-  <!--<ng-container matColumnDef="week3">-->
-  <!--<mat-header-cell *matHeaderCellDef> Week 3</mat-header-cell>-->
-  <!--<mat-cell *matCellDef="let element"> {{element.squatWeek3}}</mat-cell>-->
-  <!--</ng-container>-->
-
-  <!--<ng-container matColumnDef="week4">-->
-  <!--<mat-header-cell *matHeaderCellDef> Week 4</mat-header-cell>-->
-  <!--<mat-cell *matCellDef="let element"> {{element.squatWeek4}}</mat-cell>-->
-  <!--</ng-container>-->
-
-  <!--<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>-->
-  <!--<mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>-->
-
-  <!--</mat-table>-->
-  <!--<div class = "benchGraph">-->
-  <!--<mat-table #table [dataSource]="dataSource">-->
-
-  <!--<ng-container matColumnDef="position">-->
-  <!--<mat-header-cell *matHeaderCellDef> 1 </mat-header-cell>-->
-  <!--<mat-cell *matCellDef="let element"> {{element.benchPosition}} </mat-cell>-->
-  <!--</ng-container>-->
-
-  <!--<ng-container matColumnDef="week1">-->
-  <!--<mat-header-cell *matHeaderCellDef> Week 1 </mat-header-cell>-->
-  <!--<mat-cell *matCellDef="let element"> {{element.benchWeek1}} </mat-cell>-->
-  <!--</ng-container>-->
-
-  <!--<ng-container matColumnDef="week2">-->
-  <!--<mat-header-cell *matHeaderCellDef> Week 2 </mat-header-cell>-->
-  <!--<mat-cell *matCellDef="let element"> {{element.benchWeek2}} </mat-cell>-->
-  <!--</ng-container>-->
-
-  <!--<ng-container matColumnDef="week3">-->
-  <!--<mat-header-cell *matHeaderCellDef> Week 3 </mat-header-cell>-->
-  <!--<mat-cell *matCellDef="let element"> {{element.benchWeek3}} </mat-cell>-->
-  <!--</ng-container>-->
-
-  <!--<ng-container matColumnDef="week4">-->
-  <!--<mat-header-cell *matHeaderCellDef> Week 4 </mat-header-cell>-->
-  <!--<mat-cell *matCellDef="let element"> {{element.benchWeek4}} </mat-cell>-->
-  <!--</ng-container>-->
-
-  <!--<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>-->
-  <!--<mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>-->
-
-  <!--</mat-table>-->
-  <!--</div>-->
+</div>
 
 
-  <button mat-raised-button color="primary" class="saveButton">Save</button>
+<div class="bench-container" *ngIf="benchGraph">
+  <div fxLayout="row">
+    <div fxFlex="40%">
+      <div class="benchGraph">
+        <label id="tableTitle1" style="color:hotpink">Weight Chart</label>
+        <table id="benchTable" (click)="addToTable()">
+          <thead>
+          <tr>
+            <td>Week 1</td>
+            <td>Week 2</td>
+            <td>Week 3</td>
+            <td>Week 4</td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td id="week1BenchWeight">{{week1Weight}}</td>
+            <td id="week2BenchWeight">{{week2Weight}}</td>
+            <td id="week3BenchWeight">{{week3Weight}}</td>
+            <td id="week4BenchWeight">{{week4Weight}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div fxFlex="40%">
+      <div class="benchGoalGraph">
+        <label id="goalTitle1" style="color:hotpink">Goal Chart</label>
+        <table id="benchGoalTable" (click)="addToTable()">
+          <thead>
+          <tr>
+            <td>Week 1</td>
+            <td>Week 2</td>
+            <td>Week 3</td>
+            <td>Week 4</td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td id="week1GoalBenchWeight"></td>
+            <td id="week2GoalBenchWeight"></td>
+            <td id="week3GoalBenchWeight"></td>
+            <td id="week4GoalBenchWeight"></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="deadlift-container" *ngIf="deadLiftGraph">
+  <div fxLayout="row">
+    <div fxFlex="40%">
+      <div class="deadLiftGraph">
+        <label id="tableTitle2" style="color:hotpink">Weight Chart</label>
+        <table id="deadLiftTable" (click)="addToTable()">
+          <thead>
+          <tr>
+            <td>Week 1</td>
+            <td>Week 2</td>
+            <td>Week 3</td>
+            <td>Week 4</td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td id="week1DeadLiftWeight">{{week1Weight}}</td>
+            <td id="week2DeadLiftWeight">{{week2Weight}}</td>
+            <td id="week3DeadLiftWeight">{{week3Weight}}</td>
+            <td id="week4DeadLiftWeight">{{week4Weight}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div fxFlex="40%">
+      <div class="deadLiftGoalGraph">
+        <label id="goalTitle2" style="color:hotpink">Goal Chart</label>
+        <table id="deadLiftGoalTable" (click)="addToTable()">
+          <thead>
+          <tr>
+            <td>Week 1</td>
+            <td>Week 2</td>
+            <td>Week 3</td>
+            <td>Week 4</td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td id="week1GoalDeadLiftWeight"></td>
+            <td id="week2GoalDeadLiftWeight"></td>
+            <td id="week3GoalDeadLiftWeight"></td>
+            <td id="week4GoalDeadLiftWeight"></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button mat-raised-button color="primary" class="saveButton">Save</button>
 

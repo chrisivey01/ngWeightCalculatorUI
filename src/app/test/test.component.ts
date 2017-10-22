@@ -15,8 +15,6 @@ export class TestComponent implements OnInit {
   benchGraph = false;
   deadLiftGraph = false;
   week1Weight: number;
-  week1SquatWeight: number;
-  week1GoalSquatWeight: string;
   week2Weight: number;
   week3Weight: number;
   week4Weight: number;
@@ -38,49 +36,71 @@ export class TestComponent implements OnInit {
   }
 
   picker(event) {
-    this.benchGraph = false;
-    this.squatGraph = false;
-    this.deadLiftGraph = false;
+    this.benchGraph;
+    this.squatGraph;
+    this.deadLiftGraph;
 
-    if (event.value == 'bench')
+    if (event.value == 'bench') {
       this.benchGraph = true;
-    else if (event.value == 'squat')
+      this.squatGraph = false;
+      this.deadLiftGraph = false;
+    }
+    else if (event.value == 'squat') {
       this.squatGraph = true;
-    else if (event.value == 'deadLift')
+      this.benchGraph = false;
+      this.deadLiftGraph = false;
+    }
+    else if (event.value == 'deadLift') {
       this.deadLiftGraph = true;
+      this.squatGraph = false;
+      this.benchGraph = false;
+    }
   }
 
 
   addToTable() {
 
 
-    let a = 2* Math.round(this.week1Weight * 1.025/2);
-    if(isNaN(a)){
+    let a = 2 * Math.round(this.week1Weight * 1.025 / 2);
+    if (isNaN(a)) {
       a = 0;
     }
-    let b = 2* Math.round(this.week2Weight * 1.025/2);
-    if(isNaN(b)){
+    let b = 2 * Math.round(this.week2Weight * 1.025 / 2);
+    if (isNaN(b)) {
       b = 0;
     }
-    let c = 2* Math.round(this.week3Weight * 1.025/2);
-    if(isNaN(c)){
+    let c = 2 * Math.round(this.week3Weight * 1.025 / 2);
+    if (isNaN(c)) {
       c = 0;
     }
-    let d = 2* Math.round(this.week4Weight * 1.025/2);
-    if(isNaN(d)){
+    let d = 2 * Math.round(this.week4Weight * 1.025 / 2);
+    if (isNaN(d)) {
       d = 0;
     }
 
-    document.getElementById('week1GoalSquatWeight').innerHTML = a.toFixed()
-    document.getElementById('week2GoalSquatWeight').innerHTML = b.toFixed()
-    document.getElementById('week3GoalSquatWeight').innerHTML = c.toFixed()
-    document.getElementById('week4GoalSquatWeight').innerHTML = d.toFixed()
-
+    if (this.squatGraph) {
+      document.getElementById('week1GoalSquatWeight').innerHTML = a.toFixed()
+      document.getElementById('week2GoalSquatWeight').innerHTML = b.toFixed()
+      document.getElementById('week3GoalSquatWeight').innerHTML = c.toFixed()
+      document.getElementById('week4GoalSquatWeight').innerHTML = d.toFixed()
+    }
+    if (this.benchGraph) {
+      document.getElementById('week1GoalBenchWeight').innerHTML = a.toFixed()
+      document.getElementById('week2GoalBenchWeight').innerHTML = b.toFixed()
+      document.getElementById('week3GoalBenchWeight').innerHTML = c.toFixed()
+      document.getElementById('week4GoalBenchWeight').innerHTML = d.toFixed()
+    }
+    if (this.deadLiftGraph) {
+      document.getElementById('week1GoalDeadLiftWeight').innerHTML = a.toFixed()
+      document.getElementById('week2GoalDeadLiftWeight').innerHTML = b.toFixed()
+      document.getElementById('week3GoalDeadLiftWeight').innerHTML = c.toFixed()
+      document.getElementById('week4GoalDeadLiftWeight').innerHTML = d.toFixed()
+    }
   }
 
 }
 
-export interface Element  {
+export interface Element {
   squatPosition: number;
   squatWeek1: number;
   squatWeek2: number;
@@ -101,6 +121,7 @@ export class WeightDataSource extends DataSource<any> {
   connect(): Observable<Element[]> {
     return Observable.of(data);
   }
+
   disconnect() {
   }
 

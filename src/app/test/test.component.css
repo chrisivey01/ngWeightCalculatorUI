@@ -21,6 +21,14 @@ td{
   border-color:black;
   border-style:solid;
 }
+
+
+.weightPopUp{
+  margin-left:400px;
+}
+
+
+
 .squatGraph {
   margin-left: 170px;
   width: 50%
@@ -29,19 +37,14 @@ td{
 #squatTable{
   padding:40px;
   border-style:solid;
-  color: #6712d8;
+  color: darkorange;
 }
 
 #squatGoalTable{
   padding:40px;
   border-style:solid;
-  color: #6712d8;
+  color: darkorange;
 }
-
-.weightPopUp{
-  margin-left:400px;
-}
-
 
 
 
@@ -49,11 +52,38 @@ td{
   margin-left: 170px;
   width: 50%
 }
+#benchTable{
+  padding:40px;
+  border-style:solid;
+  color: darkorange;
+}
+
+#benchGoalTable{
+  padding:40px;
+  border-style:solid;
+  color: darkorange;
+}
+
+
+
 
 .deadLiftGraph{
   margin-left: 170px;
   width: 50%
 }
+#deadLiftTable{
+  padding:40px;
+  border-style:solid;
+  color: darkorange;
+}
+
+#deadLiftGoalTable{
+  padding:40px;
+  border-style:solid;
+  color: darkorange;
+}
+
+
 
 .saveButton{
   left:250px;

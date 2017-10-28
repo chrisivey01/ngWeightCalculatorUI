@@ -35,13 +35,11 @@ td{
 }
 
 #squatTable{
-  padding:40px;
   border-style:solid;
   color: darkorange;
 }
 
 #squatGoalTable{
-  padding:40px;
   border-style:solid;
   color: darkorange;
 }
@@ -53,13 +51,11 @@ td{
   width: 50%
 }
 #benchTable{
-  padding:40px;
   border-style:solid;
   color: darkorange;
 }
 
 #benchGoalTable{
-  padding:40px;
   border-style:solid;
   color: darkorange;
 }
@@ -72,13 +68,11 @@ td{
   width: 50%
 }
 #deadLiftTable{
-  padding:40px;
   border-style:solid;
   color: darkorange;
 }
 
 #deadLiftGoalTable{
-  padding:40px;
   border-style:solid;
   color: darkorange;
 }
